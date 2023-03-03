@@ -18,7 +18,7 @@ bot = Bot(token=TOKEN)
 @app.route('/webhook', methods=['POST', 'GET'])
 def main():
     if request.method == 'GET':
-        return 'hello'
+        return 'GET'
 
     elif request.method == 'POST':
         data = request.get_json(force=True)
@@ -26,25 +26,23 @@ def main():
         dispatcher:Dispatcher = Dispatcher(bot, None , workers=0)
 
         update:Update = Update.de_json(data, bot)
+        db.add_handler(CommandHandler('start',start))
 
-        dp.add_handler(MessageHandler(Filters.text('♻️ Orqaga'),start))
+        db.add_handler(MessageHandler(Filters.text('♻️ Orqaga'),start))
         db.add_handler(MessageHandler(Filters.text('Ob Havo'),havo))
 
         db.add_handler(CallbackQueryHandler(inline_handlerlar))
-        dispatcher.process_update(update)
+
+        
     return "Assalomu alaykum"
 
 
 #if __name__ == '__main__':
     
-   #app.run() 
+ #  app.run() 
 bot=Bot(TOKEN)
 
-#print(bot.set_webhook('https://ramazontaqvimibot.pythonanywhere.com/webhook'))
+#print(bot.set_webhook('https://obhavotatusf.pythonanywhere.com/webhook'))
 #print(bot.delete_webhook())
 print(bot.get_webhook_info())
 
-#hello
-print('hello')
-#hello
-print('')
