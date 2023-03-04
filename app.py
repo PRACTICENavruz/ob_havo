@@ -23,7 +23,7 @@ def main():
     elif request.method == 'POST':
         data = request.get_json(force=True)
 
-        dispatcher:Dispatcher = Dispatcher(bot, None , workers=0)
+        db:Dispatcher = Dispatcher(bot, None , workers=0)
 
         update:Update = Update.de_json(data, bot)
         db.add_handler(CommandHandler('start',start))
@@ -33,16 +33,16 @@ def main():
 
         db.add_handler(CallbackQueryHandler(inline_handlerlar))
 
-        
+        db.process_update(update)
     return "Assalomu alaykum"
 
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
     
- #  app.run() 
-bot=Bot(TOKEN)
+  app.run() 
+#bot=Bot(TOKEN)
 
 #print(bot.set_webhook('https://obhavotatusf.pythonanywhere.com/webhook'))
 #print(bot.delete_webhook())
-print(bot.get_webhook_info())
+#print(bot.get_webhook_info())
 
