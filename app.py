@@ -1,3 +1,4 @@
+
 import os
 from flask import Flask, request
 from telegram import Bot, Update
@@ -11,7 +12,7 @@ from main import(inline_handlerlar,back,city,start,havo)
 app = Flask(__name__)
 
 # bot
-TOKEN = os.environ['TOKEN']
+TOKEN = '6193015811:AAE58WsCs9JNCnrk3Tnf4cthN3AdOS_ptTA'
 bot = Bot(token=TOKEN)
 
 
