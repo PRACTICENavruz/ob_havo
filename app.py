@@ -38,10 +38,10 @@ def main():
     return "Assalomu alaykum"
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
     
-  app.run() 
-#bot=Bot(TOKEN)
+ # app.run() 
+bot=Bot(TOKEN)
 
 #print(bot.set_webhook('https://obhavotatusf.pythonanywhere.com/webhook'))
 #print(bot.delete_webhook())
