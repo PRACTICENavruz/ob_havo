@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup as BS
 
 
-TOKEN = '6193015811:AAE58WsCs9JNCnrk3Tnf4cthN3AdOS_ptTA'
+TOKEN = os.environ['TOKEN']
 
 def start(update: Update, context: CallbackContext):
     chat_id = update.message.chat.id
@@ -250,7 +250,7 @@ def havo(update, context):
     user = update.message.from_user
     update.message.reply_text(f"""Salom {user.first_name} 🖐🏼\nBu yerdan Shahar yoki viloyatni tanla 👇""",
                               reply_markup=InlineKeyboardMarkup(city()))
-
+"""
 updater = Updater(token=TOKEN)
 
 updater.dispatcher.add_handler(CommandHandler('start',start))
@@ -262,3 +262,4 @@ updater.dispatcher.add_handler(CallbackQueryHandler(inline_handlerlar))
 
 updater.start_polling()
 updater.idle()
+"""
