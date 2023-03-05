@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup as BS
 
 
-TOKEN = os.environ['TOKEN']
+TOKEN = '6193015811:AAE58WsCs9JNCnrk3Tnf4cthN3AdOS_ptTA'
 
 def start(update: Update, context: CallbackContext):
     chat_id = update.message.chat.id
