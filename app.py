@@ -12,7 +12,7 @@ from main import(inline_handlerlar,back,city,start,havo)
 app = Flask(__name__)
 
 # bot
-TOKEN = '6193015811:AAE58WsCs9JNCnrk3Tnf4cthN3AdOS_ptTA'
+TOKEN = os.environ['TOKEN']
 bot = Bot(token=TOKEN)
 
 
